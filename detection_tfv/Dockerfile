@@ -32,4 +32,7 @@ RUN apt-get install tensorflow-model-server
 #RUN apt install ./tensorflow-model-server_2.7.0-rc1_all.deb
 #RUN apt-get update 
 
+EXPOSE 7700
+EXPOSE 7701
+
 CMD ["tensorflow_model_server","--port=7700","--rest_api_port=7701", "--enable_batching=true", "--batching_parameters_file=/detection_tfv/batch.config","--model_name=yolo","--model_base_path=/detection_tfv/models/yolov5nu_saved_model","--tensorflow_session_parallelism=16"]

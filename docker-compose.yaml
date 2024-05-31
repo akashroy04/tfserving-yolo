@@ -17,9 +17,9 @@ services:
     ports: 
       - 7700:7700 # host:container
       - 7701:7701
-    deploy:
-      resources:
-        limits:
-          memory: 8g
-          cpus: '3'
+    # deploy:
+    #   resources:
+    #     limits:
+    #       memory: 8g
+    #       cpus: '3'
  
