@@ -1,0 +1,25 @@
+version: '3.7'  # version of compose format 
+
+services:
+  Detection_tfv:
+    environment:
+      - PYTHONUNBUFFERED=1 
+    restart: always
+    container_name: detection_tfv
+    image: detection_tfv
+    build:   # path is relative to docker-compose.yml localtion
+      context: ./detection_tfv
+#    volumes:
+#       - /var/log/tensorflow/batch.config:/detection_tfv/batch.config
+    expose:
+       - 7700
+       - 7701
+    ports: 
+      - 7700:7700 # host:container
+      - 7701:7701
+    deploy:
+      resources:
+        limits:
+          memory: 8g
+          cpus: '3'
+ 
